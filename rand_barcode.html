@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+			<title>UCSD Barcode Generator</title>
+			<script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.0/dist/JsBarcode.all.min.js"></script>
+			<style>
+        *, html {
+          margin: 0;
+          padding: 0;
+        }
+        body {
+          background-color: white;
+          color: black;
+          margin: 0 !important;
+          padding: 0 !important;
+        }
+        .largetext{
+        	padding-top: calc(1.2vh);
+        	font-family: Arial, Helvetica, sans-serif;
+        	text-align: center;
+        	font-size: calc(3rem);
+        	font-weight: bold;
+        }
+        .directions{
+        	padding-top: calc(4vh);
+            padding-bottom: calc(0.5vh);
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+            font-size: calc(2rem);
+        }
+        div.generatebutton{
+        	position: absolute;
+        	margin-left: auto;
+            margin-right: auto;
+            left: 0;
+            right: 0;
+            text-align: center;
+            bottom: 10px;
+        }
+        div.barcode{
+            position: relative;
+            padding-top: 20vh;
+        }
+        .button{
+            color: #2c74a5;
+            padding: 3vh 15vw;
+            display: inline-block;
+            font-size: calc(4rem);
+            margin: 3vh;
+            transition-duration: 0.4s;
+            cursor: pointer;
+        }
+        .button2 {
+          background-color: #2c74a5; 
+          color: black; 
+          border: 2px solid #2c74a5;
+        }
+
+        .button2:hover {
+          background-color: #2c74a5;
+          color: white;
+        }
+    		
+    </style>
+		</head>
+		<body>
+			<div class = largetext>
+				<p>UCSD Random Barcode Generator</p>
+			</div>
+			<div class = directions>
+				<p>Press Generate to render a random CODE-128 Barcode with the prefix "EXC_TEST_"</p>
+				<div class = barcode>
+					<svg id="barcode"></svg>
+				</div>
+				<div class = generatebutton>
+					<button class="button button2" onclick="generateBarcode()">Generate</button>
+				</div>
+			</body>
+			<script>
+			
+        function generateBarcode() {
+            var generatedCode = "EXC_TEST_" + generateCode(7);
+        	var newBarcode = JsBarcode("#barcode", generatedCode, {
+                format: "CODE128",
+                linecolor: "0000",
+                fontSize: 50,
+                width: 4,
+                height: 200,
+            })
+            return newBarcode;
+        }
+        function generateCode(length) {
+           var result           = '';
+           var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+           var charactersLength = characters.length;
+           for ( var i = 0; i < length; i++ ) {
+              result += characters.charAt(Math.floor(Math.random() * charactersLength));
+           }
+           return result;
+        }
+        
+			
+			</script>
+		</html>

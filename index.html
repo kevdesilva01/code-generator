@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+        <meta charset="utf-8">
+             <!-- ===== CSS ===== -->
+            <link rel="stylesheet" href="assets/styles.css">
+
+            <title>UCSD Barcode Generator</title>
+            
+            <style>
+                body {
+                    background-color: #182B49;
+                    color: black;
+                    font-family:Arial, Helvetica, sans-serif; 
+                }
+                .titletext{
+                    font-size: 2vh;
+                    color: #FFFFFF;
+                    text-align: center;
+                }
+                /* #container{
+                    position:relative;
+                } */
+                .parent {
+                    border-radius: 50px;
+                    background:white;
+                    position: relative;
+                    height: 20vh;
+                    margin-left: auto;
+                    margin-right: auto;
+                    left: 0;
+                    right: 0;
+                    text-align: center;
+                    display: block;
+                    width: 100%;
+                    font-size: 2vh;
+                    cursor: pointer;
+                }
+
+                .parent:hover {
+                    background-color: #EDECEC;
+                    color: #006A96;
+                }
+
+                img {
+                    display: inline-block;
+                    position: relative;
+                    margin-left: auto;
+                    margin-right: auto;
+                    width: 15%;
+                    max-width: 100px;
+                    padding: 0.5vw;
+                }
+=
+            </style>
+    </head>
+		
+
+<body>
+    <div class =titletext>
+        <h1>UCSD Test Code Generator</h1>
+    </div>
+    <div id ="container">
+        <button id="randombarcode" class="parent" onClick=""><img src="assets/img/barcode-solid.svg" /><br>Random Barcode</button>
+    </div>
+
+    <br>
+
+    <div id ="container">
+        <button id="random2d" class="parent" ><img src="assets/img/datamatrix.svg" /><br>Random 2D Datamartix</button>
+    </div>
+
+    <br>
+
+    <div id ="container">
+        <button id="custombarcode" class="parent" ><img src="assets/img/barcode-solid.svg" /><img src="assets/img/text-field.svg" /><br>Custom Barcode</button>
+   </div>
+
+    <br>
+
+    <div id ="container">
+        <button id="custom2d" class="parent" ><img src="assets/img/datamatrix.svg" /><img src="assets/img/text-field.svg"/><br>Custom 2D Datamatrix</button>
+    </div>
+            <!--===== MAIN JS =====-->
+            <script src="assets/main.js"></script>
+            <script type="text/javascript">
+                document.getElementById("randombarcode").onclick = function () {
+                    location.href = "rand_barcode.html";
+                };
+            </script>
+</body>
+		        
+		</html>
