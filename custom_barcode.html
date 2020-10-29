@@ -21,15 +21,18 @@
 		</head>
 		<body>
 			<div class = largetext>
-				<p>Random Barcode Generator</p>
+				<p>Custom Barcode Generator</p>
 			</div>
 			<div class = directions>
-				<p>Press Generate to render a random CODE-128 Barcode with the prefix "EXC_TEST_"</p>
+				<p>Type in code to generate barcode with "EXC_TEST_" prefix"</p>
 				<div class = barcode>
 					<svg id="barcode"></svg>
-				</div>
+                </div>
+                
 				<div class = generatebutton>
-					<button class="button button2" onclick="generateRandomBarcode()">Generate</button>
+                    <INPUT TYPE="TEXT" id="customstring" value="Enter value here">
+                        <br>
+					<button class="button button2" onclick="generateCustomBarcode()">Generate</button>
 				</div>
 			</body>
 			<!--===== MAIN JS =====-->
