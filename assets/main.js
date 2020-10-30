@@ -38,12 +38,44 @@ function generateCustomBarcode() {
     return newBarcode;
 }
 
-function createRandomCode(length) {
-   var result           = '';
-   var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-   var charactersLength = characters.length;
-   for ( var i = 0; i < length; i++ ) {
-      result += characters.charAt(Math.floor(Math.random() * charactersLength));
-   }
-   return result;
+// Generate Datamatrix
+function generateCustom2dCode() {
+var barcode = new ej.barcodegenerator.DataMatrixGenerator
+(
+    {
+       width: '200px',
+        height: '150px',
+        displayText: { visibility: true },
+        mode: 'SVG',
+        value: 'EXC_TEST_' + document.getElementById('customstring').value,
+
+    }
+);
+barcode.appendTo('#element');
 }
+
+function generateRandom2dCode() {
+    var barcode = new ej.barcodegenerator.DataMatrixGenerator
+    (
+        {
+           width: '200px',
+            height: '150px',
+            displayText: { visibility: true },
+            mode: 'SVG',
+            value: 'EXC_TEST_' + createRandomCode(7),
+    
+        }
+    );
+    barcode.appendTo('#element');
+    }
+
+function createRandomCode(length) {
+    var result           = '';
+    var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    var charactersLength = characters.length;
+    for ( var i = 0; i < length; i++ ) {
+        result += characters.charAt(Math.floor(Math.random() * charactersLength));
+    }
+    return result;
+}
+     

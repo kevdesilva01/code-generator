@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+			<title>UCSD Code Generator</title>
+      <link rel="stylesheet" href="assets/styles.css">
+			<style>
+        *, html {
+          margin: 0;
+          padding: 0;
+        }
+        body {
+          background-color: white;
+          color: black;
+          margin: 0 !important;
+          padding: 0 !important;
+        }
+        
+    </style>
+
+<script src="https://cdn.syncfusion.com/ej2/dist/ej2.min.js" type="text/javascript"></script>
+
+		</head>
+		<body>
+            <a href="index.html" class="Back">&laquo; Back</a>
+			<div class = largetext>
+				<p>Random Datamatrix Generator</p>
+			</div>
+			<div class = directions>
+				<p>Press Generate to render a random 2D Datamatrix with the prefix "EXC_TEST_"</p>
+				<div id="container" class="barcodeStyle">
+                    <div id="element"></div>
+                </div>
+				<div class = generatebutton>
+					<button class="button button2" onclick="generateRandom2dCode()">Generate</button>
+                </div>
+                <script>
+                    var ele = document.getElementById('container');
+                    if(ele) {
+                        ele.style.visibility = "visible";
+                     }   
+                            </script>
+            </body>
+			<!--===== MAIN JS =====-->
+      <script src="assets/main.js"></script>
+		</html>

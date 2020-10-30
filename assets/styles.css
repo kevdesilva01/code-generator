@@ -33,6 +33,22 @@ img {
     max-width: 100px;
     padding: 0.5vw;
 }
+a {
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #EDECEC;
+}
+  
+a:hover {
+    background-color: #006A96;
+    color: black;
+}
+
+.back {
+    background-color:black;
+    color: black;
+  }
 
 /* Random Barcode CSS */
 
@@ -83,6 +99,15 @@ div.barcode{
   color: white;
 }
 
+/* Datamatrix CSS */
+
+.barcodeStyle{
+    height: 150px;
+    width: 200px;
+    padding-left: 40%;
+    padding-top: 9%;
+}
+
 /* Custom Code CSS */
 
 input {
@@ -92,3 +117,4 @@ input {
     height: 5vh;
     font-size: calc(2rem);
 }
+
