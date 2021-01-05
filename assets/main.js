@@ -40,11 +40,12 @@ function generateCustomBarcode() {
 
 // Generate Datamatrix
 function generateCustom2dCode() {
+document.getElementById('element').innerHTML = ''
 var barcode = new ej.barcodegenerator.DataMatrixGenerator
 (
     {
-       width: '200px',
-        height: '150px',
+       width: '250px',
+        height: '250px',
         displayText: { visibility: true },
         mode: 'SVG',
         value: 'EXC_TEST_' + document.getElementById('customstring').value,
@@ -54,12 +55,13 @@ var barcode = new ej.barcodegenerator.DataMatrixGenerator
 barcode.appendTo('#element');
 }
 
-function generateRandom2dCode() {
+function generateRandom2dCode() {  
+document.getElementById('element').innerHTML = ''
     var barcode = new ej.barcodegenerator.DataMatrixGenerator
     (
         {
-           width: '200px',
-            height: '150px',
+           width: '250px',
+            height: '250px',
             displayText: { visibility: true },
             mode: 'SVG',
             value: 'EXC_TEST_' + createRandomCode(7),
@@ -78,4 +80,3 @@ function createRandomCode(length) {
     }
     return result;
 }
-     
